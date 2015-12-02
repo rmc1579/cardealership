@@ -13,7 +13,7 @@ app.run(["$rootScope", "$state", function($rootScope, $state) {
 
 app.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
-    var ref = new Firebase("https://brunellautosales.firebaseio.com");
+    var ref = new Firebase("Here you need firebase database link");
     return $firebaseAuth(ref);
   }
 ]);

@@ -91,7 +91,7 @@ app.controller("MainCtrl", ['$scope', '$firebase', '$location', 'contactUsServic
     ];
     
     
-    $scope.notItemMessage = "No Items Found, Please Selected a Different Model";
+    $scope.notItemMessage = "No Items Found, Please Select a Different Model";
     
     //$scope.notFoundItem = false;
     

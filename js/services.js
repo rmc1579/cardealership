@@ -4,7 +4,7 @@ angular.module("autoApp")
     this.addContact = function(newContact){
         
         console.log(newContact);
-        var ref = new Firebase("https://brunellautosales.firebaseio.com/contacts");
+        var ref = new Firebase("Here you need firebase database link");
         var fb = $firebaseArray(ref);
         
         fb.$add(newContact)
@@ -20,7 +20,7 @@ angular.module("autoApp")
     
     this.readContact = function(){
         var deferred = $q.defer();
-        var ref = new Firebase("https://brunellautosales.firebaseio.com/contacts/");
+        var ref = new Firebase("Here you need firebase database link");
         ref.on("value", function(response){
             deferred.resolve(response.val());      
         }),function (erroObject){
@@ -32,7 +32,7 @@ angular.module("autoApp")
     
     this.auth = function(authObj){
         var deferred = $q.defer();
-        var ref = new Firebase("https://brunellautosales.firebaseio.com");
+        var ref = new Firebase("Here you need firebase database link");
 
         ref.authWithPassword(authObj, function(error, authData) {
           if (error) {
@@ -68,7 +68,7 @@ angular.module("autoApp")
         var deferred = $q.defer();
         var urlApi = '';
         if (id === "trucks"){
-            urlApi = "https://api.edmunds.com/api/vehicle/v2/toyota?state=used&year=2014&view=full&fmt=json&api_key=xhcxku224w5x4qex8c88g64t";
+            urlApi = "https://api.edmunds.com/api/vehicle/v2/toyota?state=used&year=2014&view=full&fmt=json&api_key=enter edmunds api key";
             $http({
               method: 'GET',
               url: urlApi
@@ -88,7 +88,7 @@ angular.module("autoApp")
         var deffered = $q.defer();
         var modelsArray = [];
         var numberofObjects = 0;
-        var urlApi = 'https://api.edmunds.com/api/vehicle/v2/'+make+'?state=used&year=2014&view=full&fmt=json&api_key=xhcxku224w5x4qex8c88g64t';
+        var urlApi = 'https://api.edmunds.com/api/vehicle/v2/'+make+'?state=used&year=2014&view=full&fmt=json&api_key=enter edmunds api key';
         $http({
             method: 'GET',
             url: urlApi
@@ -116,10 +116,9 @@ angular.module("autoApp")
         var deffered = $q.defer();
         var results = {};
         var photos = '';
-        var urlApi = //'https://api.edmunds.com/api/vehicle/v2/'+query.make+'/'+query.model+'/'+query.year+'/styles?state=used&category='+query.category+'&view=full&fmt=json&api_key=xhcxku224w5x4qex8c88g64t';
-        'https://api.edmunds.com/api/vehicle/v2/'+query.make+'/'+query.model+'/'+query.year+'/styles?state=used&view=full&fmt=json&api_key=xhcxku224w5x4qex8c88g64t';
+        var urlApi = 'https://api.edmunds.com/api/vehicle/v2/'+query.make+'/'+query.model+'/'+query.year+'/styles?state=used&view=full&fmt=json&api_key=enter edmunds api key';
         
-        var urlPhotos = 'https://api.edmunds.com/api/media/v2/'+query.make+'/'+query.model+'/'+query.year+'/photos?api_key=xhcxku224w5x4qex8c88g64t'
+        var urlPhotos = 'https://api.edmunds.com/api/media/v2/'+query.make+'/'+query.model+'/'+query.year+'/photos?api_key=enter edmunds api key'
 
         $http({
             method: 'GET',
