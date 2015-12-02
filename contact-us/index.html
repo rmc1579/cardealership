@@ -1,0 +1,45 @@
+
+                
+<div class="row">
+    <div class="col-md-6">
+        <div class="col-md-12">
+            <div class="mainTitle">Contact Us</div>
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form id="frmContact" role="form" ng-submit="setContact(newContact)">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" ng-model="newContact.firstName" placeholder="{{firstName}}" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" ng-model="newContact.lastName" placeholder="{{lastName}}" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="email" ng-model="newContact.email" placeholder="{{email}}" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" ng-model="newContact.phoneNumber" placeholder="{{phoneNumber}}" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="">
+                            <button class="btn btn-default" ng-disabled="frmContact.$invalid">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=USC60MNS031A021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+    </div>
+</div><!--. /row -->
+            

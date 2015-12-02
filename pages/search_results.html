@@ -1,0 +1,246 @@
+<div ng-show="searchcarresults">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mainTitle">Car Results</div>
+        </div>
+    </div><!-- ./row -->
+    <div class="clear">&nbsp;</div>
+    <div class="row" ng-repeat="results in searchResults">
+        <div class="col-md-6" ng-repeat="innerResults in results.styles">
+            <div class="panel panel-default">
+                <div class="panel-header">
+                    <ul class="nav nav-tabs">
+                        <div ng-show='false' id="getCarID">{{innerResults.id}}</div>
+                        
+                        <li class="active" ><a data-toggle="tab" id="Headertab1_{{innerResults.id}}" href="">Home</a></li>
+                        <li><a data-toggle="tab" id="Headertab2_{{innerResults.id}}" >Menu 1</a></li>
+                        <script type="text/javascript">
+                            getCarID();
+                        function getCarID(){
+                            var getcaridTab1 = $('#getCarID').html();
+                            var getcaridTab2 = $('#getCarID').html();
+                            var tab1 = 'tab1_'+getcaridTab1;
+                            $('#Headertab1_'+getcaridTab1).attr('onclick', tab1); 
+                        }
+                    </script>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <!--<div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <h3>HOME</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+
+                    </div>-->
+                    <div class="tab-content">
+                    <div id="tab1_{{innerResults.id}}" ng-show='' class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="carTitle">{{innerResults.model.name}}</div>
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">MSRP</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">Invoice</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">Other</div>
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Base Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.baseMSRP | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.baseInvoice | currency}}
+                            </div>
+                             <div class="col-md-3">
+                                 -
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Private Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedPrivateParty | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Retail Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedTmvRetail | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Trade In Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedTradeIn | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Destination:</div>
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.deliveryCharges | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.deliveryCharges | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                        </div><!-- ./row -->
+                    </div><!-- ./tab-panel1 -->
+
+                    <div id="tab2_{{innerResults.id}}">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="carTitle">{{innerResults.model.name}}</div>
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">MSRP</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">Invoice</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="carInfoTitle">Other</div>
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Base Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.baseMSRP | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.baseInvoice | currency}}
+                            </div>
+                             <div class="col-md-3">
+                                 -
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Private Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedPrivateParty | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Retail Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedTmvRetail | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Trade In Price:</div>
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.usedTradeIn | currency}}
+                            </div>
+                        </div><!-- ./row -->
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="carInfoLabel">Destination:</div>
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.deliveryCharges | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                {{innerResults.price.deliveryCharges | currency}}
+                            </div>
+                            <div class="col-md-3">
+                                -
+                            </div>
+                        </div><!-- ./row -->
+                    </div><!-- ./tab-panel2 -->
+                    </div><!-- ./tab-content -->
+                </div>
+            </div>
+        </div>
+    </div><!-- ./row -->
+</div><!-- ./searchcarresults -->
+
+
+<!--
+<div class="row" ng-repeat="results in searchResults">
+    <div class="col-md-6" ng-repeat="innerResults in results.styles">
+        <div class="col-md-12">
+            <div><label>Model:</label> <span class="carTitle"></span></div>
+        </div>
+        <div class="col-md-12">
+            <div><label>Price:</label> </div>
+            <div><label></label></div>
+        </div>    
+        <div class=""></div>
+    </div>
+</div><!-- ./row -->
+

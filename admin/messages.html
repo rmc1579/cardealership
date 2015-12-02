@@ -1,0 +1,18 @@
+<div class="col-md-12">
+    <h2 class="text-uppercase">Contacts</h2>
+</div>
+
+<table class="table table-hover" data-ng-init="init('read')">
+    <tr>
+        <th><label>Name:</label></th>
+        <th><label>Email:</label></th>
+        <th><label>Phone:</label></th>
+        <th><label>Delete</label></th>
+    </tr>
+    <tr ng-repeat="(id, m) in messages">
+        <td><p class="text-capitalize"><strong>{{m.firstName}} {{m.lastName}}</strong></p></td>
+        <td><p>{{m.email}}</p></td>
+        <td><p>{{m.phoneNumber}}</p></td>
+        <td><p><input type="checkbox" name="messagesSection" value="{{id}}" /></p></td>
+    </tr>
+</table>

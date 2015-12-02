@@ -1,0 +1,56 @@
+<div class="col-md-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>See <span class="text-capitalize">{{cartype}}</span> by Make</h4>
+        </div>
+        <div class="panel-body">
+            <form id="searchForm" role="form" ng-submit="submitCarSearch()">
+                <div class="form-group">
+                    <select id="makeSelect" class="form-control" ng-model="searchFormItem.make" ng-change="selectMake()" name="makeSelect" required>
+                        <option value="" selected="selected">Select Make</option>
+                        <option ng-repeat="makes in carMakes.makes" value="{{makes.id}}">{{makes.make}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-control" ng-model="searchFormItem.model" ng-change="selectModel()" name="modelSelect" required>
+                        <option value="" selected="selected">Select Model</option>
+                        <option ng-repeat="models in carModel" value={{models}}>{{models}}</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select class="form-control" ng-model="searchFormItem.year" ng-change="selectYear()" name="yearSelect" required>
+                        <option value="" selected="selected">Select Year</option>
+                        <option ng-repeat="year in carYear" value={{year}}>{{year}}</option>
+                    </select>
+                </div>
+                
+                <div class="">
+                    <button class="btn btn-default" ng-disabled="searchForm.$invalid">Search</button>
+                </div>
+            </form>
+            
+        </div><!-- ./panel-body -->
+        
+    </div><!-- ./panel -->
+</div><!-- ./col-md-6 -->
+<div class="row">
+    <carresults></carresults>
+</div><!-- ./row -->
+
+<div class="modal fade" id="notItemFound" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">&nbsp;</h4>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">{{notItemMessage}}</h4>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+

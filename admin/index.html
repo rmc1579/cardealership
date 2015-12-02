@@ -1,0 +1,174 @@
+<!--
+<!document html>
+<html ng-app="autoApp">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" />
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
+        <!-- ui-router 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>        
+        
+        <!-- Firebase 
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+        <!-- AngularFire 
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+        
+    </head>
+    <body ng-controller="MainCtrl">
+        <section id="Header">
+            <div class="container">
+                <header-section></header-section>
+            </div>
+        </section>
+        
+        
+        
+        
+        <section id="MainContent">
+            <div class="container">
+-->
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <div class="mainTitle">Login</div>
+                                </div>
+                                <div class="clear">&nbsp;</div>  
+                                <!-- LOGIN -->
+                                <div class="panel panel-default">
+                                    <form id="frmLogin" role="form" ng-submit="getAuth()">
+                                        <div class="panel-body">
+                                            <!--
+                                            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                                                <ul class="nav navbar-nav">
+                                                    <li> <a class="link" ui-sref="read">Login</a>
+
+                                                    </li>
+                                                    <li> <a class="link" ng-click="UserLogOut()">Logout</a>
+
+                                                    </li>
+                                                    
+                                                    <li> <a href="#/register">Register</a>
+
+                                                    </li>
+                                                    <li> <a href="#/profile">Profile</a>
+
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </nav>
+                                            -->
+                                            <div class="form-group">
+                                                <!--<label for="txtEmail">Email address</label>-->
+                                                <input type="email" class="form-control" id="txtEmail" ng-model="authObj.email" placeholder="{{emailauth}}" name="email" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <!--<label for="txtPass">Password</label>-->
+                                                <input type="password" class="form-control" id="txtPass" ng-model="authObj.password" placeholder="{{passwordauth}}" name="password" required />
+                                            </div>
+                                            <div class="">
+                                                <button type="submit" class="btn btn-default" ng-disabled="frmLogin.$invalid">Login</button>
+                                            </div>
+                                        </div>
+                                        <!--
+                                         <h4>Login with</h4>
+                                 <a href="#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
+                                 <a href="#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
+
+                                        <a href="#" class="btn btn-danger bt-social" data-provider="google">Google+</a> 
+                                        <a href="#" class="btn btn-default bt-social" data-provider="github">GitHub</a>
+                                        <a href="#" class="btn btn-warning" id="btAnon">Anon</a>
+                                        -->
+                                    </form>
+                                </div>
+                            <!-- / LOGIN -->
+                            <!-- LOGOUT -->
+                            <form id="frmLogout" ng-show="{{loggedout}}" role="form">
+                                 <h2>You are logged out!</h2>
+
+                            </form>
+                            <!-- / LOGOUT -->
+                            <!-- REGISTER -->
+                            <!--
+                            <form id="frmRegister" role="form">
+                                 <h2>Register</h2>
+
+                                <div class="form-group">
+                                    <label for="txtRegEmail">Email address</label>
+                                    <input type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtRegPass">Password</label>
+                                    <input type="password" class="form-control" id="txtPass" placeholder="Password" name="password" />
+                                </div>
+                                <button type="submit" class="btn btn-default">Register</button>
+                            </form>
+                            -->
+                            <!-- / REGISTER -->
+                            <!-- PROFILE -->
+                            <!--    
+                            <form id="frmProfile" role="form">
+                                 <h2>Profile</h2>
+
+                                <br />
+                                <div class="form-group">
+                                    <label for="txtName">Name</label>
+                                    <input type="text" class="form-control" id="txtName" placeholder="Name" name="name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="ddlDino">Favorite Dinosaur</label>
+                                    <select id="ddlDino" name="favoriteDinosaur" class="form-control">
+                                        <option>None</option>
+                                        <option>Pteranodon</option>
+                                        <option>Lambeosaurus</option>
+                                        <option>Stegosaurus</option>
+                                        <option>Daspletosaurus</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                            -->
+                            <!-- / PROFILE -->
+                            <hr />
+                            <!-- ALERT BOX -->
+                            <div id="alert" ng-show="{{loggedin}}" class="alert" role="alert">
+                                 <h4 id="alert-title">You are not logged in</h4>
+
+                                <p id="alert-detail"></p>
+                            </div>
+                            <!-- / ALERT BOX -->
+                        </div><!-- ./col-md-12 -->
+                        
+                    </div>
+                    <div class="col-md-6">
+                        
+                    </div>
+                </div><!-- ./row -->
+
+<!--
+            </div>
+        </section>
+        <section id="Footer">
+            <div class="container">
+                <footer-section></footer-section>
+            </div>
+        </section>
+        
+        
+        <script src="../js/app.js"></script>
+        <script src="../js/controller.js"></script>
+        <script src="../js/directives.js"></script>
+        <script src="../js/services.js"></script>
+    </body>
+</html>
+
+-->
+
+
+<!-- http://jsfiddle.net/firebase/a221m6pb/ -->

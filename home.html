@@ -1,0 +1,154 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+    <div class="item active slide1" >
+
+        <div class="carousel-caption">
+
+        </div>
+    </div>
+    <div class="item slide2">
+
+        <div class="carousel-caption">
+        ...
+        </div>
+    </div>
+    <div class="item slide3">
+        <div class="carousel-caption">
+        ...
+        </div>
+    </div>
+
+    </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="link text-center" ng-click="getCars('Crew Cab Pickup')" >
+            <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=USC60TOT094E021001_2.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+            <a class="modelCarText text-capitalize">Trucks</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="link text-center" ng-click="getCars('4dr SUV')">
+            <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC50CHS112C021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+            <a class="modelCarText text-capitalize">SUVs</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="link text-center" ng-click="getCars('convertibles')">
+            <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC30PRC021A021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+            <a class="modelCarText text-capitalize">Sports Cars</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="link text-center" ng-click="getCars('Sedan')">
+            <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC50SUC011C021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+            <a class="modelCarText text-capitalize">Sedans</a>
+        </div>
+    </div>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+<div class="footerDivider text-center">
+    <a ng-click="showcarsection=true;showseemore=false" ng-show="showseemore" class="seeMorePosition link">See More</a>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+<div ng-show="showcarsection">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="link text-center" ng-click="getCars('4dr SUV')">
+                <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC40NIS112B021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                <a class="modelCarText text-capitalize">Crossovers</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="link text-center" ng-click="getCars('Coupe')">
+                <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=USC50HOC021A121001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                <a class="modelCarText text-capitalize">Coupes</a>
+            </div>
+        </div>
+        <!--
+        <div class="col-md-3">
+            <div class="link text-center" ng-click="getCars('luxury cars')">
+                <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC60HYC111D021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                <a class="modelCarText text-capitalize">Luxury Cars</a>
+            </div>
+        </div>
+        -->
+        <div class="col-md-3">
+            <div class="link text-center" ng-click="getCars('2dr Hatchback')">
+                <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC50HYC013A021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                <a class="modelCarText text-capitalize">Hatchbacks</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="link text-center">
+                <div class="link text-center" ng-click="getCars('Passenger Minivan')">
+                    <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=USC10DOV171B021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                    <a class="modelCarText text-capitalize">MiniVans/Vans</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+    <div class="footerDivider">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+    <!--
+    <div class="row">
+        <div class="col-md-3">
+            <div class="link text-center">
+                <div class="link text-center" ng-click="getCars('hybrids')">
+                    <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=CAC20TOC161A021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                    <a class="modelCarText text-capitalize">Hybrids</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="link text-center">
+                <div class="link text-center" ng-click="getCars('minivans')">
+                    <img class="img-responsive" ng-src="http://car-pictures.cars.com/images/?IMG=USC10DOV171B021001.png&WIDTH=624&HEIGHT=300&AUTOTRIM=1" />
+                    <a class="modelCarText text-capitalize">MiniVans/Vans</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+-->
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+    <div class="footerDivider text-center">
+        <a ng-click="showcarsection=false;showseemore=true" class="seeMorePosition link">See Less</a>
+    </div>
+</div>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+
